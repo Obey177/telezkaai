@@ -4,10 +4,17 @@ layout: default
 
 <article class="post">
   <header class="post-header">
+    <a class="back-link" href="{{ '/' | relative_url }}#posts">← Все посты</a>
     <p class="eyebrow">AI · Prompt Engineering · Delivery</p>
     <h1>{{ page.title }}</h1>
     {% if page.description %}<p class="lead">{{ page.description }}</p>{% endif %}
+    <div class="post-meta post-meta-large">
+      {% if page.date %}<time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d.%m.%Y" }}</time>{% endif %}
+      {% if page.tags.size > 0 %}<span>{{ page.tags | join: " · " }}</span>{% endif %}
+    </div>
   </header>
+
+  {% if page.image %}<img class="post-hero-image" src="{{ page.image | relative_url }}" alt="{{ page.title }}">{% endif %}
 
   <div class="post-content">
     {{ content }}

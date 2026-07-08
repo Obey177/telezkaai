@@ -3,19 +3,37 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.title }}</title>
-  <meta name="description" content="{{ page.description | default: site.description }}">
-  {% if page.image %}<meta property="og:image" content="{{ page.image | absolute_url }}">{% endif %}
+  <title>{% if page.title and page.title != site.title %}{{ page.title }} — {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description | strip_html | strip_newlines }}">
+  <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
   <meta property="og:title" content="{{ page.title | default: site.title }}">
-  <meta property="og:description" content="{{ page.description | default: site.description }}">
+  <meta property="og:description" content="{{ page.description | default: site.description | strip_html | strip_newlines }}">
+  {% assign og_image = page.image | default: site.logo %}
+  {% if og_image %}<meta property="og:image" content="{{ og_image | absolute_url }}">{% endif %}
+  <link rel="icon" type="image/png" href="{{ '/assets/images/favicon.png' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
-<body>
+<body class="layout-{{ page.layout | default: 'page' }}">
   <header class="site-header">
-    <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <a class="site-brand" href="{{ '/' | relative_url }}" aria-label="На главную">
+      <img class="site-brand-logo" src="{{ '/assets/images/telezkaai-logo-512.webp' | relative_url }}" alt="Логотип тележка эйай">
+      <span class="site-brand-copy">
+        <strong>{{ site.channel_title | default: site.title }}</strong>
+        <small>{{ site.channel_subtitle }}</small>
+      </span>
+    </a>
+    <nav class="site-nav" aria-label="Навигация">
+      <a href="{{ '/' | relative_url }}#posts">Посты</a>
+      {% if site.telegram_url %}<a href="{{ site.telegram_url }}" target="_blank" rel="me noopener">Telegram</a>{% endif %}
+    </nav>
   </header>
+
   <main class="container">
     {{ content }}
   </main>
+
+  <footer class="site-footer">
+    <p>© {{ site.time | date: '%Y' }} {{ site.channel_title | default: site.title }}. AI без галстука и без религиозного восторга.</p>
+  </footer>
 </body>
 </html>

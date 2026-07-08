@@ -1,20 +1,14 @@
-title: "Корпоративная тревога и AI"
-description: "Заметки про разработку, AI и то, как не сойти с ума в Jira"
+title: "тележка эйай"
+description: "Telegram-канал про AI, IT, корпоративную тревогу, Jira и людей, которые всё это пережили."
 lang: ru
 timezone: Europe/Moscow
 url: "https://obey177.github.io"
 baseurl: "/telezkaai"
 markdown: kramdown
-permalink: /:categories/:title/
-future: true
+permalink: /posts/:title/
+future: false
 
-collections:
-  posts:
-    output: true
-
-defaults:
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: post
+channel_title: "тележка эйай"
+channel_subtitle: "AI, IT и корпоративная тревога на колёсах"
+telegram_url: "https://t.me/telezkaai"
+logo: /assets/images/telezkaai-logo.webp

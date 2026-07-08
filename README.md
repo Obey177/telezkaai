@@ -1,53 +1,41 @@
-# Prompt Engineering Gonzo — Jekyll / GitHub Pages
+# тележка эйай — GitHub Pages / Jekyll
 
-Готовый мини-сайт под GitHub Pages.
+Главная страница — `index.md`, layout `home`.
+На главной автоматически показывается список постов из папки `_posts`.
 
-## Что внутри
+## Как добавить новый пост
 
-- `_posts/2026-07-08-prompt-engineering-gonzo.md` — статья с Jekyll front matter.
-- `assets/images/` — картинки в PNG и WebP.
-- `_layouts/` — минимальные HTML-шаблоны.
-- `assets/css/style.css` — тёмный стиль страницы.
-- `_config.yml` — настройки Jekyll.
-- `Gemfile` — для локального запуска через github-pages gem.
+Создай файл в `_posts` с именем:
 
-## Быстрый деплой через GitHub UI
-
-1. Создай новый репозиторий на GitHub.
-   - Для личного сайта: `USERNAME.github.io`.
-   - Для проектного сайта: любое имя, например `ai-notes`.
-2. Загрузи содержимое этой папки в репозиторий.
-3. Открой `Settings → Pages`.
-4. В `Build and deployment` выбери `Deploy from a branch`.
-5. Branch: `main`, folder: `/root`.
-6. Сохрани. Через пару минут сайт появится по адресу:
-   - `https://USERNAME.github.io/` для личного сайта;
-   - `https://USERNAME.github.io/REPOSITORY/` для проектного сайта.
-
-## Деплой через терминал
-
-```bash
-git init
-git add .
-git commit -m "Add prompt engineering post"
-git branch -M main
-git remote add origin git@github.com:USERNAME/REPOSITORY.git
-git push -u origin main
+```text
+YYYY-MM-DD-short-slug.md
 ```
 
-Потом включи GitHub Pages в настройках репозитория: `Settings → Pages → Deploy from a branch → main / root`.
+Минимальный front matter:
 
-## Локальный запуск
-
-```bash
-bundle install
-bundle exec jekyll serve
+```yaml
+---
+layout: post
+title: "Название поста"
+description: "Короткое описание для карточки на главной"
+date: 2024-02-01 10:00:00 +0300
+image: /assets/images/some-image.webp
+permalink: /posts/some-post/
+---
 ```
 
-Открой `http://localhost:4000`.
+После пуша карточка появится на главной автоматически.
 
-Если это проектный сайт, а не `USERNAME.github.io`, можно прописать имя репозитория в `_config.yml`:
+## Важно для project pages
 
-```yml
-baseurl: "/REPOSITORY"
+Для адреса `https://obey177.github.io/telezkaai/` в `_config.yml` должно быть:
+
+```yaml
+baseurl: "/telezkaai"
+```
+
+Для личного сайта `https://USERNAME.github.io/` нужно поставить:
+
+```yaml
+baseurl: ""
 ```

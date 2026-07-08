@@ -1,0 +1,55 @@
+---
+layout: default
+---
+
+<section class="home-hero">
+  <div class="home-hero-logo-wrap">
+    <img class="home-hero-logo" src="{{ site.logo | relative_url }}" alt="Логотип Telegram-канала {{ site.channel_title }}">
+  </div>
+  <div class="home-hero-copy">
+    <p class="eyebrow">telegram-канал</p>
+    <h1>{{ site.channel_title }}</h1>
+    <p class="lead">{{ site.channel_subtitle }}. Пишем про AI без розовых единорогов: с Jira, дедлайнами, плохими промптами, хорошими вопросами и лёгким запахом горящего production.</p>
+    <div class="hero-actions">
+      {% if site.telegram_url %}<a class="button" href="{{ site.telegram_url }}" target="_blank" rel="me noopener">Открыть Telegram</a>{% endif %}
+      <a class="button button-secondary" href="#posts">Читать посты</a>
+    </div>
+  </div>
+</section>
+
+<section id="posts" class="posts-section">
+  <div class="section-heading">
+    <p class="eyebrow">содержимое тележки</p>
+    <h2>Посты</h2>
+  </div>
+
+  {% if site.posts.size > 0 %}
+  <div class="post-grid">
+    {% for post in site.posts %}
+    <article class="post-card">
+      <a class="post-card-image" href="{{ post.url | relative_url }}" aria-label="Открыть: {{ post.title }}">
+        {% if post.image %}
+        <img src="{{ post.image | relative_url }}" alt="{{ post.title | escape }}">
+        {% else %}
+        <img src="{{ site.logo | relative_url }}" alt="{{ post.title | escape }}">
+        {% endif %}
+      </a>
+      <div class="post-card-body">
+        <div class="post-meta">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d.%m.%Y" }}</time>
+          {% if post.categories.size > 0 %}<span>{{ post.categories | join: " · " }}</span>{% endif %}
+        </div>
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        {% if post.description %}<p>{{ post.description }}</p>{% endif %}
+        <a class="read-more" href="{{ post.url | relative_url }}">читать внутрь →</a>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+  {% else %}
+  <div class="empty-state">
+    <h3>Посты пока не подъехали</h3>
+    <p>Jekyll не нашёл файлы в <code>_posts</code>. Проверь дату поста и имя файла: <code>YYYY-MM-DD-slug.md</code>.</p>
+  </div>
+  {% endif %}
+</section>
