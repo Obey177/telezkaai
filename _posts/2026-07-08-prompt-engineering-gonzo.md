@@ -8,7 +8,6 @@ tags: [prompt-engineering, chatgpt, qa, business-analysis, system-analysis, prod
 image: /assets/images/dull-window-future.webp
 permalink: /posts/prompt-engineering-2023/
 ---
-![Тусклая форточка в будущее]({{ "/assets/images/dull-window-future.webp" | relative_url }})
 
 На рубеже 2023-го у нас был Senior C# разработчик, Tech Lead и Team Lead. Все трое, к сожалению, были мной.
 
