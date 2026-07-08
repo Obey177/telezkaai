@@ -1,0 +1,21 @@
+title: "Корпоративная тревога и AI"
+description: "Заметки про разработку, AI и то, как не сойти с ума в Jira"
+lang: ru
+timezone: Europe/Moscow
+url: ""
+# Для репозитория USERNAME.github.io оставь пустым.
+# Для проектного сайта вида USERNAME.github.io/REPOSITORY укажи: "/REPOSITORY".
+baseurl: "/telezkaai"
+markdown: kramdown
+permalink: /:categories/:title/
+
+collections:
+  posts:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
