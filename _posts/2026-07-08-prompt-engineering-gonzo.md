@@ -6,7 +6,7 @@ date: 2026-07-08 09:00:00 +0300
 categories: [ai, engineering]
 tags: [prompt-engineering, chatgpt, qa, business-analysis, system-analysis, product, project-management]
 image: /assets/images/dull-window-future.webp
-permalink: /posts/prompt-engineering-corporate-jira/
+permalink: /posts/prompt-engineering-2023/
 ---
 ![Тусклая форточка в будущее]({{ "/assets/images/dull-window-future.webp" | relative_url }})
 

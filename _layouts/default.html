@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body class="layout-{{ page.layout | default: 'page' }}">
+  {% unless page.hide_header %}
   <header class="site-header">
     <a class="site-brand" href="{{ '/' | relative_url }}" aria-label="На главную">
       <img class="site-brand-logo" src="{{ '/assets/images/telezkaai-logo-512.webp' | relative_url }}" alt="Логотип тележка эйай">
@@ -27,6 +28,7 @@
       {% if site.telegram_url %}<a href="{{ site.telegram_url }}" target="_blank" rel="me noopener">Telegram</a>{% endif %}
     </nav>
   </header>
+  {% endunless %}
 
   <main class="container">
     {{ content }}
