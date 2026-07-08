@@ -784,7 +784,9 @@ Nice-to-have:
 
 **MCP** — открытый протокол, который стандартизирует подключение LLM-приложений к внешним источникам данных и инструментам: tools, resources, prompts, workflows.[^mcp]
 
-**Langfuse / LangSmith / Phoenix** — не про «написать промпт», а про то, чтобы видеть trace: что было в контексте, какие tools вызывались, где сожрались токены, почему агент ушёл в лес.[^langfuse][^langsmith][^phoenix] Мой простой принцип:
+**Langfuse / LangSmith / Phoenix** — не про «написать промпт», а про то, чтобы видеть trace: что было в контексте, какие tools вызывались, где сожрались токены, почему агент ушёл в лес.[^langfuse] [^langsmith] [^phoenix] 
+
+Мой простой принцип:
 
 > Если это разовая задача — собери context pack руками или через `files-to-prompt`.
 > Если это репозиторий — `code2prompt` или `Repomix`.
@@ -879,20 +881,36 @@ Prompt engineering научил нас нормально просить. Contex
 
 ## Источники и полезные ссылки
 
-[^langchain-context]: LangChain, “Context Engineering”: https://www.langchain.com/blog/context-engineering-for-agents
-[^langchain-rise]: LangChain, “The rise of context engineering”: https://www.langchain.com/blog/the-rise-of-context-engineering
-[^anthropic-context]: Anthropic, “Effective context engineering for AI agents”: https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents
-[^anthropic-long]: Anthropic, раздел про compaction, note-taking и sub-agent architectures в статье “Effective context engineering for AI agents”: https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents
-[^mcp]: Model Context Protocol specification: https://modelcontextprotocol.io/specification/2025-03-26
-[^code2prompt]: `mufeedvh/code2prompt`: https://github.com/mufeedvh/code2prompt
-[^repomix]: Repomix docs: https://repomix.com/guide/
-[^gitingest]: `coderamp-labs/gitingest`: https://github.com/coderamp-labs/gitingest
-[^files-to-prompt]: `simonw/files-to-prompt`: https://github.com/simonw/files-to-prompt
-[^llm-cli]: `simonw/LLM`: https://github.com/simonw/LLM
-[^aider]: Aider docs: https://aider.chat/docs/
-[^continue]: Continue docs, Context Providers: https://docs.continue.dev/customize/custom-providers
-[^context7]: Context7 docs: https://context7.com/docs/overview
-[^vscode-context]: VS Code, “Set up a context engineering flow in VS Code”: https://code.visualstudio.com/docs/agents/guides/context-engineering-guide
-[^langfuse]: Langfuse docs: https://langfuse.com/docs
-[^langsmith]: LangSmith Observability docs: https://docs.langchain.com/langsmith/observability
-[^phoenix]: Arize Phoenix docs: https://arize.com/docs/phoenix
+[^langchain-context]: LangChain, *Context Engineering*. <https://www.langchain.com/blog/context-engineering-for-agents>
+
+[^langchain-rise]: LangChain, *The Rise of Context Engineering*. <https://www.langchain.com/blog/the-rise-of-context-engineering>
+
+[^anthropic-context]: Anthropic, *Effective Context Engineering for AI Agents*. <https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents>
+
+[^anthropic-long]: Anthropic, раздел про compaction, note-taking и sub-agent architectures в статье *Effective Context Engineering for AI Agents*. <https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents>
+
+[^mcp]: Model Context Protocol Specification. <https://modelcontextprotocol.io/specification/2025-03-26>
+
+[^code2prompt]: `mufeedvh/code2prompt`. <https://github.com/mufeedvh/code2prompt>
+
+[^repomix]: Repomix Documentation. <https://repomix.com/guide/>
+
+[^gitingest]: `coderamp-labs/gitingest`. <https://github.com/coderamp-labs/gitingest>
+
+[^files-to-prompt]: `simonw/files-to-prompt`. <https://github.com/simonw/files-to-prompt>
+
+[^llm-cli]: `simonw/LLM`. <https://github.com/simonw/LLM>
+
+[^aider]: Aider Documentation. <https://aider.chat/docs/>
+
+[^continue]: Continue Documentation, Context Providers. <https://docs.continue.dev/customize/custom-providers>
+
+[^context7]: Context7 Documentation. <https://context7.com/docs/overview>
+
+[^vscode-context]: VS Code, *Set up a Context Engineering Flow in VS Code*. <https://code.visualstudio.com/docs/agents/guides/context-engineering-guide>
+
+[^langfuse]: Langfuse Documentation. <https://langfuse.com/docs>
+
+[^langsmith]: LangSmith Observability Documentation. <https://docs.langchain.com/langsmith/observability>
+
+[^phoenix]: Arize Phoenix Documentation. <https://arize.com/docs/phoenix>
