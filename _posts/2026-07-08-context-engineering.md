@@ -711,15 +711,57 @@ Nice-to-have:
 
 Инструменты не делают мышление за тебя. Но они помогают не копировать руками 40 файлов в чат как человек, потерявший уважение к себе.
 
-| Задача | Инструменты | Когда использовать | Нервный комментарий |
-|---|---|---|---|
-| Собрать кодовую базу в prompt-ready вид | `code2prompt`, `Repomix`, `files-to-prompt`, `Gitingest` | Когда модели нужны файлы, дерево проекта, diff, тесты, документация | Не корми модель всем подряд. Сначала подумай, что ей реально нужно. |
-| Быстро скормить публичный репозиторий | `Gitingest` | Когда надо изучить open-source repo или дать модели обзор проекта по URL | Удобно для разведки. Не путать с пониманием домена. |
-| Работать из терминала | `LLM`, `aider` | Когда хочешь повторяемые prompt-запуски или git-native pair programming | Терминал честнее. Он не делает вид, что магия. |
-| Дать IDE-агенту проектный контекст | VS Code custom instructions / prompt files, Continue, Cline, Roo Code | Когда агент должен понимать repo conventions, архитектуру, правила PR | Чем больше прав у агента, тем крепче поводок. |
-| Подключить актуальную документацию | Context7, `llms.txt`, локальные docs, официальные docs | Когда фреймворки и SDK меняются быстрее, чем твоя нервная система | Старые API выглядят убедительно. И именно поэтому опасны. |
-| Подключать tools и data sources | MCP servers | Когда агенту нужны GitHub, БД, файловая система, внутренние API, документация | MCP — это не священный USB-C. Это провод. Провода тоже бьют током. |
-| Смотреть, что агент реально видел и делал | Langfuse, LangSmith, Arize Phoenix | Когда строишь не «поиграться», а production workflow | Без trace ты не дебажишь агента. Ты гадаешь по кофейной гуще. |
+<div class="tool-cards">
+  <section class="tool-card tool-card-wide">
+    <p class="tool-card-label">Кодовая база</p>
+    <h3>Собрать кодовую базу в prompt-ready вид</h3>
+    <p><strong>Инструменты:</strong> <code>code2prompt</code>, <code>Repomix</code>, <code>files-to-prompt</code>, <code>Gitingest</code></p>
+    <p><strong>Когда:</strong> когда модели нужны файлы, дерево проекта, diff, тесты, документация.</p>
+    <p class="tool-card-comment">Не корми модель всем подряд. Сначала подумай, что ей реально нужно.</p>
+  </section>
+  <section class="tool-card">
+    <p class="tool-card-label">Разведка</p>
+    <h3>Быстро скормить публичный репозиторий</h3>
+    <p><strong>Инструменты:</strong> <code>Gitingest</code></p>
+    <p><strong>Когда:</strong> когда надо изучить open-source repo или дать модели обзор проекта по URL.</p>
+    <p class="tool-card-comment">Удобно для разведки. Не путать с пониманием домена.</p>
+  </section>
+  <section class="tool-card">
+    <p class="tool-card-label">Терминал</p>
+    <h3>Работать из терминала</h3>
+    <p><strong>Инструменты:</strong> <code>LLM</code>, <code>aider</code></p>
+    <p><strong>Когда:</strong> когда хочешь повторяемые prompt-запуски или git-native pair programming.</p>
+    <p class="tool-card-comment">Терминал честнее. Он не делает вид, что магия.</p>
+  </section>
+  <section class="tool-card">
+    <p class="tool-card-label">IDE-агент</p>
+    <h3>Дать агенту проектный контекст</h3>
+    <p><strong>Инструменты:</strong> VS Code custom instructions / prompt files, Continue, Cline, Roo Code.</p>
+    <p><strong>Когда:</strong> когда агент должен понимать repo conventions, архитектуру, правила PR.</p>
+    <p class="tool-card-comment">Чем больше прав у агента, тем крепче поводок.</p>
+  </section>
+  <section class="tool-card">
+    <p class="tool-card-label">Документация</p>
+    <h3>Подключить актуальную документацию</h3>
+    <p><strong>Инструменты:</strong> Context7, <code>llms.txt</code>, локальные docs, официальные docs.</p>
+    <p><strong>Когда:</strong> когда фреймворки и SDK меняются быстрее, чем твоя нервная система.</p>
+    <p class="tool-card-comment">Старые API выглядят убедительно. И именно поэтому опасны.</p>
+  </section>
+  <section class="tool-card">
+    <p class="tool-card-label">Tools & data</p>
+    <h3>Подключать tools и data sources</h3>
+    <p><strong>Инструменты:</strong> MCP servers.</p>
+    <p><strong>Когда:</strong> когда агенту нужны GitHub, БД, файловая система, внутренние API, документация.</p>
+    <p class="tool-card-comment">MCP — это не священный USB-C. Это провод. Провода тоже бьют током.</p>
+  </section>
+  <section class="tool-card">
+    <p class="tool-card-label">Observability</p>
+    <h3>Смотреть, что агент реально видел и делал</h3>
+    <p><strong>Инструменты:</strong> Langfuse, LangSmith, Arize Phoenix.</p>
+    <p><strong>Когда:</strong> когда строишь не «поиграться», а production workflow.</p>
+    <p class="tool-card-comment">Без trace ты не дебажишь агента. Ты гадаешь по кофейной гуще.</p>
+  </section>
+</div>
 
 Чуть подробнее. **code2prompt** — CLI для превращения кодовой базы в один LLM prompt с деревом проекта, шаблонами, token tracking и git-интеграцией.[^code2prompt] **Repomix** — пакует репозиторий в один AI-friendly файл, поддерживает token counting, ignore-файлы, несколько форматов вывода и проверки на секреты.[^repomix] **Gitingest** — превращает Git-репозиторий или URL в prompt-friendly digest; можно использовать CLI или просто подход «заменить `hub` на `ingest`» в GitHub URL.[^gitingest]
 
