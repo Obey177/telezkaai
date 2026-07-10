@@ -5,7 +5,7 @@ description: "Prompt engineering был маленьким ТЗ. Context enginee
 date: 2026-07-08 00:00:00 +0300
 categories: [ai, engineering]
 tags: [context-engineering, ai-agents, prompt-engineering, qa, business-analysis, system-analysis, product, project-management, hr, delivery]
-image: /assets/images/cover_post_2.webp
+image: /assets/images/post_2/cover_post_2.webp
 permalink: /posts/context-engineering/
 ---
 
@@ -84,7 +84,7 @@ Prompt engineering — это когда ты научился писать мо
 
 ## Большое контекстное окно не спасает от большого бардака
 
-![Большое окно не равно понимание]({{ "/assets/images/big-window-little-brain.webp" | relative_url }})
+![Большое окно не равно понимание]({{ "/assets/images/post_2/big-window-little-brain.webp" | relative_url }})
 
 Есть соблазн. Мерзкий, липкий, человеческий. Раз окно большое — закинем всё. Весь репозиторий. Все требования. Все логи. Все чаты. Все решения архитектурного комитета. Все скриншоты. Все сомнения. Все страхи. Все письма от бизнеса. Все 312 страниц документации платёжного провайдера, включая раздел про интеграцию с Palm OS. И пусть модель сама разберётся. Не разберётся. Точнее, она сделает вид, что разобралась. Это хуже.
 
@@ -260,7 +260,7 @@ npx repomix@latest
 
 ## QA: «не тест-кейсы, а карта мест, где система умрёт»
 
-![QA знает где всё сломается]({{ "/assets/images/qa-context.webp" | relative_url }})
+![QA знает где всё сломается]({{ "/assets/images/post_2/qa-context.webp" | relative_url }})
 
 QA живёт там, где оптимизм разработки встречается с пользователем. Разработчик говорит: «там простая форма». Пользователь вводит emoji в поле имени, открывает две вкладки, нажимает назад, теряет интернет, повторяет платеж, и система начинает выдавать звуки древнего принтера.
 
@@ -334,7 +334,7 @@ Context engineering для QA — это не «попросить больше 
 
 ## Системный аналитик: «просто webhook» — последние слова перед инцидентом
 
-![Системный аналитик держит оборону]({{ "/assets/images/system-analytic-context.webp" | relative_url }})
+![Системный аналитик держит оборону]({{ "/assets/images/post_2/system-analytic-context.webp" | relative_url }})
 
 Интеграции всегда начинаются с фразы:
 
@@ -563,7 +563,7 @@ Context engineering для менеджера продукта — это дис
 
 ## PM: «план проекта» без зависимостей — это гороскоп с датами
 
-![Roadmap как минное поле]({{ "/assets/images/pm-context.webp" | relative_url }})
+![Roadmap как минное поле]({{ "/assets/images/post_2/pm-context.webp" | relative_url }})
 
 PM открывает roadmap и видит не roadmap. Он видит болото, в котором бегают зависимости. Backend ждёт API от провайдера. Frontend ждёт дизайн. QA ждёт стенд. Security ждёт threat model. Бизнес ждёт пятницу. Пятница, как обычно, завтра.
 
@@ -639,7 +639,7 @@ Context engineering для PM — это способ не дать модели
 
 ## HR: «подбери кандидата» — зона, где ИИ надо держать на поводке
 
-![HR держит ИИ на поводке]({{ "/assets/images/hr-context.webp" | relative_url }})
+![HR держит ИИ на поводке]({{ "/assets/images/post_2/hr-context.webp" | relative_url }})
 
 HR — не место для AI-казино. Здесь легко сделать плохо: начать оценивать человека по мусорным сигналам, красиво оформить предвзятость, перепутать уверенность с компетентностью и назвать это «AI-assisted hiring». Модель может помогать. Но она не должна быть чёрным ящиком, который решает судьбу кандидата.
 
@@ -796,7 +796,7 @@ Nice-to-have:
 
 ## Контекстная папка в репозитории
 
-![Аптечка под названием /context]({{ "/assets/images/context.webp" | relative_url }})
+![Аптечка под названием /context]({{ "/assets/images/post_2/context.webp" | relative_url }})
 
 Самый недооценённый инструмент context engineering — обычная папка в репозитории.
 
